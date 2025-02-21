@@ -10,12 +10,11 @@ public class Paddle_Controller : MonoBehaviour
     private void Update()
     {
         float input = Input.GetAxis("Horizontal");
-        Vector3 movement = new Vector3(input, 0, 0) * (speed * Time.deltaTime);
+        Vector3 movement = new Vector3(input, 0f, 0f).normalized * (speed * Time.deltaTime);
         transform.Translate(movement);
-        
-        Vector3 posClamp = transform.position;
-        posClamp.x = Mathf.Clamp(posClamp.x, -9.0f, 9.0f);
-        transform.position = posClamp;
 
+        Vector3 clampedPos = transform.position;
+        clampedPos.x = Mathf.Clamp(clampedPos.x, -9f, 9f);
+        transform.position = clampedPos;
     }
 }

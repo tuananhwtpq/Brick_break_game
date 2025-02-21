@@ -9,20 +9,20 @@ public class Ball_Controller : MonoBehaviour
 
     public float speed = 10.0f;
     
-    private Rigidbody rb;
+    private Rigidbody2D rb;
 
     private bool isLaunched = false;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         if (!isLaunched && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector2(Random.Range(-1f, 1f), 1.0f).normalized * speed;
+            rb.velocity = new Vector2(Random.Range(-1f, 1f), 1).normalized * speed;
             isLaunched = true;
         }
     }

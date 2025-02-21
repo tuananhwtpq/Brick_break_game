@@ -32,7 +32,7 @@ public class Game_Manager : MonoBehaviour
 
     void ResetBall()
     {
-        Instantiate(ballPrefab, paddle.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+        Instantiate(ballPrefab, paddle.position + new Vector3(0, 1.0f, 0), Quaternion.identity);
         
     }
 

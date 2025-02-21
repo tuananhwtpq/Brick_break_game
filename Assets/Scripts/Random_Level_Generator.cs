@@ -8,7 +8,7 @@ public class Random_Level_Generator : MonoBehaviour
 {
     public GameObject brickPrefab;
 
-    public int rows = 5;
+    public int rows = 4;
     public int columns = 8;
 
     public float brickWidth = 1f;
@@ -19,7 +19,7 @@ public class Random_Level_Generator : MonoBehaviour
 
     public float brickProbability = 0.7f;
 
-    public int numberOfBricks;
+    public int numberOfBricks = 0;
     
     public Color[] randomColors;
 
@@ -46,6 +46,7 @@ public class Random_Level_Generator : MonoBehaviour
                     GameObject _brick = Instantiate(brickPrefab, position, Quaternion.identity, transform);
                     
                     _brick.GetComponent<SpriteRenderer>().color = randomColors[Random.Range(0, randomColors.Length)];
+                    _brick.GetComponent<SpriteRenderer>().sortingOrder = 1;
                     numberOfBricks++;
                 }
                 
